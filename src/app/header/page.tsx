@@ -1,19 +1,51 @@
-import React from 'react'
-
-const Header = () => {
+import Image from "next/image";
+import Link from "next/link";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+export default function Header() {
   return (
-    <header className=''>
-        <nav className=' flex justify-between p-4'>
-            <div>avatar</div>
-            <ul className='flex gap-4'>
-                <li>Home</li>
-                <li>About</li>
-                <li>Project</li>
-                <li>Hire me</li>
-            </ul>
+    <header className="py-6 md:px-16 px-6 border-b border-zinc-800 z-30 md:mb-28 mb-20">
+      <div className="max-w-6xl mx-auto flex items-center justify-between">
+      <Avatar>
+  <AvatarImage src="https://github.com/shadcn.png" />
+  <AvatarFallback>CN</AvatarFallback>
+</Avatar>
+        <nav>
+          <ul className="flex items-center gap-x-8">
+            <li>
+              <Link
+                href="/home"
+                className="hover:text-purple-400 duration-300"
+              >
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/about"
+                className="hover:text-purple-400 duration-300"
+              >
+                About
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/projects"
+                className="hover:text-purple-400 duration-300"
+              >
+                Projects
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/"
+                className="hover:text-purple-400 duration-300"
+              >
+                Hire Me
+              </Link>
+            </li>
+          </ul>
         </nav>
+      </div>
     </header>
-  )
+  );
 }
-
-export default Header
