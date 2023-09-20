@@ -30,11 +30,19 @@ const Profile =async () => {
 const data:mydata[]=await getProfileData();
 console.log(data)
   return (
-    <div className="  max-w-7xl mx-auto lg:px-16 px-6">
+    <div className="flex  max-w-7xl mx-auto lg:px-16 px-6">
       
-       
+       <div className='-mt-32 '>
+        {data.map((item)=>(
+          <div className='text-2xl '>
+          
+          {item.headline}</div>
+          
+        ))}
+      
+       </div>
         
-     
+       <HeroSvg/>
     
     </div>
   );
